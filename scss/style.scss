@@ -1,0 +1,351 @@
+
+@import "reset";
+@import "_init";
+
+%clearfix{
+  &:after{
+    content:"";
+    display: table;
+    clear: both;
+  }
+}
+@mixin font($f,$f-w:bold,$l:1px){
+    font-size: $f;
+    font-weight: $f-w;
+    letter-spacing: $l;
+}
+@mixin circle($W,$h,$color:#000){
+  border: 2px solid $color;
+  width: $W;
+  height: $h;
+  border-radius: 100%;
+}
+@mixin size($w,$h) {
+  width: $w;
+  height: $h;
+}
+
+$color:(
+  pink:#FFEDF7,
+  blue:#003164,
+  red:#FF4384,
+  white:#FFFFFF,
+  gray: rgba(0,49,100,0.2),
+);
+
+
+// 主要內容
+*{
+  font-family: 'Roboto', sans-serif;
+  
+}
+body,html{
+  max-width: 1280px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.container{
+  display: flex;
+}
+.container__main{
+  background-color: map-get($color,pink);
+  width: 60%;
+  box-sizing: border-box;
+  padding: 48px 80px;
+  
+  .workingWrap{
+    .circle--working{
+      @include circle(48px,48px,#000 );
+      display: inline-block;
+    }
+    .workingItem{
+      display: inline-block;
+      @include font(24px);
+      color: map-get($color,blue);
+      vertical-align: top;
+    }
+    .circle--frequency{
+      @include circle(12px,12px,#FF4384);
+      display: block;
+    }
+  }
+  .countdown{
+    @include font(176px);
+    color: map-get($color,red);
+    line-height: 1;
+    margin-bottom: 100px;
+  }
+  .chartCircle{
+    @include size(540px,540px);
+    position: absolute;
+    top: 160px;
+    left: 560px;
+    z-index: 5;
+    .around{
+      fill: none;
+      stroke: #FF4384;
+      stroke-width: 0.8;
+    }
+    .center{
+      fill: #FF4384;
+    }
+    .heart{
+      fill: #FFEDF7;
+    }
+    polyline{
+      fill: #FF4384;
+    }
+    rect{
+      fill: #fff;
+    }
+  }
+}
+.addMission{
+  @include size(445px,56px);
+  background: #fff;
+  padding: 19px 16px;
+  box-sizing: border-box;
+  margin-bottom: 145px;
+  &__text{
+    &::placeholder{
+      color: map-get($color,red);
+      @include font(16px);
+      font-style: italic;
+    }
+    border: none;
+    width: 380px;
+    color: map-get($color,red);
+  }
+  .fa-plus{
+    cursor: pointer;
+    color: map-get($color,red);
+  }
+}
+.list{
+  width: 445px;
+  
+  li{
+    border-bottom: 1px solid map-get($color,gray);
+    padding: 9px 0;
+  }
+  .circle--todo{
+    @include circle(24px,24px,map-get($color,blue));
+    float: left;
+    margin-right: 4px;
+  }
+  &__items{
+    @include font(16px);
+    color: map-get($color,blue);
+  }
+  .fa-play-circle-o{
+    float: right;
+    font-size: 24px;
+    color: map-get($color,blue);
+    cursor: pointer;
+  }
+  &__add{
+    float: right;
+    color: map-get($color,red);
+    @include font(16px);
+    margin-top: 9px;
+    cursor: pointer;
+  }
+}
+.container__menu{
+  background-color: map-get($color,blue);
+  width: 40%;
+  padding: 48px 85px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  i{
+    font-size: 36px;
+    color: map-get($color,white);
+    cursor: pointer;
+    transition-duration:0.3s;
+    &:hover{
+      font-size: 45px;
+      
+    }
+  }
+  &--text{
+    writing-mode: vertical-lr;
+    @include font(24px);
+    color: map-get($color,white);
+  }
+}
+
+//layout
+.flex{
+  display: flex;
+  @include size(1280px,800px);
+  flex-direction: row;
+  background-color: #003164;
+  padding: 48px 85px 0;
+  box-sizing: border-box;
+  
+  &__left{
+    display: flex;
+    position: relative;
+    flex: 2;
+    font-size: 36px;
+    font-weight: bold;
+    overflow: hidden;
+    color:  rgba(255,255,255,0.2);
+    .nav{
+      display: inline-block;
+      
+      li{
+        margin-bottom: 42px;
+        transition-duration: 0.5s;
+        cursor: pointer;
+        &:hover{
+          color: #fff;
+        }
+        i{
+          margin-right: 8px;
+        }
+      }  
+      .clock{
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        bottom: -175px;
+        border-radius: 100%;
+        background-color:#FFEDF7;
+        .chartCircle--small{
+          @include size(100px,100px);
+          position: relative;
+          fill: #FF4384;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          polyline{
+            fill: #fff;
+          }
+        }
+        
+        p{
+          text-align: center;
+          
+        }
+        .clock__ticking{
+          transform: translateY(-75%);
+          color: #FF4384;
+          font-size: 64px;
+          line-height: 1;
+        }
+        .clock__intro{
+          font-size: 16px;
+          color: #000;
+          transform: translateY(-175%);
+        }
+      }
+    }  
+  }
+  &__middle{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    .addMission{
+      margin-bottom: 48px;
+    }
+    .list{
+      li{
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+      .circle--todo{
+        border: 1px solid #fff;
+      }
+      &__items,.fa-play-circle-o{
+        color: #fff;
+      }
+    }
+  }
+  &__right{
+    display: flex;
+    flex: 1;
+    .flex__right__container{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 256px;
+      li{
+        display: flex;
+        color: #fff;
+        font-size: 48px;
+      }
+      i{
+        margin-bottom: 491px;
+      }
+      p{
+        writing-mode: vertical-lr;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 2px;
+        
+      }
+    }
+  }
+}
+.title{
+  padding: 8px 16px;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,0.2);
+  
+  &__text{
+    width: calc(100% - 24px);
+    display: inline-block;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  span{
+    font-size: 16px;
+    padding-left: 100px;
+  }
+}
+.focustime{
+  ul{
+    font-size: 0;
+    margin-bottom: 46px;
+    li{
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+      width: 50%;
+      box-sizing: border-box;
+      padding-top: 16px;
+      .date{
+        color: #fff;
+      }
+      .number{
+        font-size: 64px;
+        color: #FF4384;
+        span{
+          font-size:16px;
+          color: rgba(255,255,255,0.2)
+        }
+      }
+    }
+  }
+}
+.barGraph{
+  width: 460px;
+  height: 280px;
+  stroke: #fff;
+  rect{
+    stroke: none;
+    fill: #fff;
+  }
+  text{
+    font-weight: 100;
+  }
+  rect:hover{
+    fill: #FF4384;
+  }
+}

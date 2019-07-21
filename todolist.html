@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TodoList</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="flex">
+    <div class="flex__left">
+      <ul class="nav">
+        <li>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+          <span>TO-DO LIST</span>
+        </li>
+        <li>
+          <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          <span>ANALYTICS</span>
+        </li>
+        <li>
+          <i class="fa fa-music" aria-hidden="true"></i>
+          <span>RINGTONES</span>
+        </li>
+        <div class="clock">
+          <svg class="chartCircle chartCircle--small" viewbox="-50 -50 100 100">
+            <circle class="around" cx="0" cy="0" r="49"></circle>
+            <circle class="center" cx="0" cy="0" r="47"></circle>
+            <polyline points="-10,-15 -10,15 15,0"></polyline>
+          </svg>
+          <p class="clock__ticking">25:00</p>
+          <p class="clock__intro">the First thing to do today</p>
+
+        </div>
+      </ul>
+
+    </div>
+    <div class="flex__middle">
+      <div class="addMission">
+        <input type="text" class="addMission__text" placeholder="add a new mission…">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+      <div class="title">
+        <p class="title__text">TO-DO</p>
+        <i class="fa fa-caret-up" aria-hidden="true"></i>
+      </div>
+      <ul class="list">
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">the First thing to do today</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">the second thing to do today</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">the third thing to do today</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">the forth thing to do today</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">complete the keynote</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">prepare presentation</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <p class="list__add">MORE</p>
+      </ul>
+      <div class="title">
+        <p class="title__text">DOWN</p>
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="flex__right">
+      <ul class="flex__right__container">
+        <li>
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </li>
+        <li>
+          <p>POMODORO</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>

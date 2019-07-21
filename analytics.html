@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>analytics</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="flex">
+    <div class="flex__left">
+      <ul class="nav">
+        <li>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+          <span>TO-DO LIST</span>
+        </li>
+        <li>
+          <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          <span>ANALYTICS</span>
+        </li>
+        <li>
+          <i class="fa fa-music" aria-hidden="true"></i>
+          <span>RINGTONES</span>
+        </li>
+        <div class="clock">
+          <svg class="chartCircle chartCircle--small" viewbox="-50 -50 100 100">
+            <circle class="around" cx="0" cy="0" r="49"></circle>
+            <circle class="center" cx="0" cy="0" r="47"></circle>
+            <polyline points="-10,-15 -10,15 15,0"></polyline>
+          </svg>
+          <p class="clock__ticking">25:00</p>
+          <p class="clock__intro">the First thing to do today</p>
+
+        </div>
+      </ul>
+
+    </div>
+    <div class="flex__middle">
+      <div class="focustime">
+        <div class="title">
+          <p class="title__text">FOCUS TIME</p>
+        </div>
+        <ul>
+          <li>
+            <p class="date">today</p>
+            <p class="number">20<span>/tomato</span></p>
+          </li>
+          <li>
+            <p class="date">week</p>
+            <p class="number">108<span>/tomato</span></p>
+
+          </li>
+        </ul>
+      </div>
+      <div class="chart">
+        <div class="title">
+          <p class="title__text">CHART <span>&lt;2019.7.1 - 2019.7.7&gt;</span></p>
+        </div>
+        <svg class="barGraph" viewbox="0 0 460 280">
+          <line x1="25" y1="0" x2="25" y2="255"></line>
+          <line x1="25" y1="255" x2="460" y2="255"></line>
+          <rect x="53" y="87" width="30" height="168"></rect>
+          <rect x="111" y="129" width="30" height="126"></rect>
+          <rect x="164" y="87" width="30" height="168"></rect>
+          <rect x="222" y="171" width="30" height="84"></rect>
+          <rect x="280" y="129" width="30" height="126"></rect>
+          <rect x="338" y="213" width="30" height="42"></rect>
+          <rect x="396" y="45" width="30" height="210"></rect>
+          <text x="2" y="23">24</text>
+          <text x="2" y="63">20</text>
+          <text x="2" y="103">16</text>
+          <text x="2" y="143">12</text>
+          <text x="2" y="183">8</text>
+          <text x="2" y="223">4</text>
+          <text x="53" y="275">7/1</text>
+          <text x="111" y="275">7/2</text>
+          <text x="164" y="275">7/3</text>
+          <text x="222" y="275">7/4</text>
+          <text x="280" y="275">7/5</text>
+          <text x="338" y="275">7/6</text>
+          <text x="396" y="275">7/7</text>
+        </svg>
+      </div>
+    </div>
+    <div class="flex__right">
+      <ul class="flex__right__container">
+        <li>
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </li>
+        <li>
+          <p>POMODORO</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>

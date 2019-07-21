@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TomatoClock</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="container__main">
+      <div class="addMission">
+        <input type="text" class="addMission__text" placeholder="add a new mission…">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+
+      <div class="workingWrap">
+        <div class="circle--working"></div>
+        <P class="workingItem">THE FIRST THING TO DO TODAY
+          <span class="circle--frequency">
+        </P>
+      </div>
+      <p class="countdown">25:00</p>
+      <ul class="list">
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">THE SECOND THING TO DO TODAY</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">THE THIRD THING TO DO TODAY</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <li>
+          <div class="circle--todo"></div>
+          <span class="list__items">THE FORTH THING TO DO TODAY</span>
+          <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+        </li>
+        <p class="list__add">MORE</p>
+      </ul>
+      <svg class="chartCircle" viewbox="-50 -50 100 100">
+        <circle class="around" cx="0" cy="0" r="49"></circle>
+        <circle class="center" cx="0" cy="0" r="47"></circle>
+        <circle class="heart" cx="0" cy="0" r="10"></circle>
+        <polyline points="-2,-4 -2,4 4,0"></polyline>
+        <rect x="12" y="8" width="2" height="2"></rect>
+      </svg>
+    </div>
+    <div class="container__menu">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+      <i class="fa fa-music" aria-hidden="true"></i>
+      <p class="container__menu--text">POMODORO</p>
+    </div>
+  </div>
+</body>
+
+</html>
